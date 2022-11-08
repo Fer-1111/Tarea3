@@ -1,2 +1,5 @@
 # Tarea3
-Tarea tres
+Integrantes: 
+-Sergio Opazo 
+-Jorge Avendaño
+-Fernanda Corona
