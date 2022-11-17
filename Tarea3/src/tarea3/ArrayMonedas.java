@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 
 
 package tarea3;
 
 
+=======
+package tarea3;
+
+>>>>>>> bc3f0cc2c20fa47f39a1a16463e3b769bdd0ac87
 import java.util.ArrayList;
 
 public class ArrayMonedas{
