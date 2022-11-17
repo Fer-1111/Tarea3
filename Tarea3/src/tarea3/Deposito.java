@@ -1,11 +1,8 @@
-
 package tarea3;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JLabel;
-
-import java.awt.Graphics;
 
 public class Deposito extends JLabel{
     private final ArrayList<Bebida> ListBebidas;

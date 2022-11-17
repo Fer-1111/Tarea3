@@ -1,19 +1,15 @@
 package tarea3;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 class Expendedor extends JLabel{
     public Deposito coca;
     public Deposito sprite;
     public Deposito fanta;
     private int vuelto;
-    private int precio;
+    private final int precio;
 
     public Expendedor(){
         coca = new Deposito();
@@ -26,6 +22,7 @@ class Expendedor extends JLabel{
             fanta.addBebida(new Fanta(300 + serie));
         }
     }
+    @Override
     public void paint(Graphics g){
         ImageIcon ExpendedorImagen = new ImageIcon(getClass().getResource("/images/Expendedor.png"));
         g.drawImage(ExpendedorImagen.getImage(), 280, 20, 380,530,this);
@@ -33,7 +30,7 @@ class Expendedor extends JLabel{
         sprite.paint(g);
         fanta.paint(g);
     }
-        public Bebida comprarBebida(Moneda m, int cualBebida)throws PagoIncorrectoException , PagoInsuficienteException, NoHayBebidaException{
+        public void comprarBebida(Moneda m, int cualBebida)throws PagoIncorrectoException , PagoInsuficienteException, NoHayBebidaException{
         
         if (m == null) {
             throw new PagoIncorrectoException("Error, estas intentando comprar sin dinero");
@@ -59,15 +56,32 @@ class Expendedor extends JLabel{
                 MonedasDelExp.addMoneda(getVuelto());
             }
             if (cualBebida == 1) {
-                System.out.println("se saco una coca");
-                return coca.getBebida();
+                System.out.println("se saco una coca");             
+                coca.getBebida();
+                getBebida(1);
             }
             if (cualBebida == 2) {
-                return sprite.getBebida();
+                sprite.getBebida();
+                getBebida(2);
             }
             if (cualBebida == 3) {
-                return fanta.getBebida();
+                fanta.getBebida();
+                getBebida(3);
             }
+        }
+    }
+    public Bebida getBebida(int cualBebida){
+        if(cualBebida == 1){
+            Bebida b = new CocaCola(0);
+            return b;
+        }
+        if(cualBebida == 2){
+            Bebida b = new Sprite(0);
+            return b;
+        }
+        if(cualBebida == 3){
+            Bebida b = new Fanta(0);
+            return b;
         }
         return null;
     }
@@ -77,20 +91,16 @@ class Expendedor extends JLabel{
             return null;
         }
         else{
-            Moneda m = new Moneda100();
+            Moneda m = new Moneda100(200);
             return m;
         }
     }
     public int BebidaQueQueda(int i){
         switch (i) {
-            case 1:
-                return coca.arrayLong();
-            case 2:
-                return sprite.arrayLong();
-            case 3:
-                return fanta.arrayLong();
-            default:
-                break;
+            case 1 -> {return coca.arrayLong();}
+            case 2 -> {return sprite.arrayLong();}
+            case 3 -> {return fanta.arrayLong();}
+            default -> {}
         }
         System.out.println("no esta esa opcion");
         return 0;

@@ -23,8 +23,8 @@ public class PanelPrincipal extends JPanel{
     public void ComprarBebida(int cualBebida){
         if(cualBebida == 1){
             try{
-                Moneda m = new Moneda1000();
-                Bebida b = exp.comprarBebida(m,1);
+                Moneda m = new Moneda1000(100);
+                exp.comprarBebida(m,1);
                 System.out.println("quedan: "+exp.BebidaQueQueda(1));
             } 
             catch(PagoIncorrectoException ex){
@@ -36,8 +36,8 @@ public class PanelPrincipal extends JPanel{
         }
         if(cualBebida == 2){
             try{
-                Moneda m = new Moneda1000();
-                Bebida b = exp.comprarBebida(m,2);
+                Moneda m = new Moneda1000(100);
+                exp.comprarBebida(m,2);
                 System.out.println("quedan: "+exp.BebidaQueQueda(2));
             } 
             catch(PagoIncorrectoException ex){
@@ -49,8 +49,8 @@ public class PanelPrincipal extends JPanel{
         }
         if(cualBebida == 3){
             try{
-                Moneda m = new Moneda1000();
-                Bebida b = exp.comprarBebida(m,3);
+                Moneda m = new Moneda1000(100);
+                exp.comprarBebida(m,3);
                 System.out.println("quedan: "+exp.BebidaQueQueda(3));
             } 
             catch(PagoIncorrectoException ex){

@@ -1,16 +1,19 @@
-
 package tarea3;
 
 public abstract class Moneda{
-    public String getSerie(){ //significa que retorna su dirección en RAM como número de serie
-        return this.toString();
+    private final int serie;
+    public Moneda(int serie){
+        this.serie = serie;
+    }
+    public int getSerie(){
+        return serie;
     }
     public abstract int getValor(); //retorna la cantidad de $que vale la moneda
     public abstract String MonedaDevuelta();
 }
 class Moneda1000 extends Moneda{
-    public Moneda1000(){
-        super();
+    public Moneda1000(int serie){
+        super(serie);
     }
     @Override
     public int getValor(){
@@ -22,8 +25,8 @@ class Moneda1000 extends Moneda{
     }
 }
 class Moneda500 extends Moneda{
-public Moneda500(){
-        super();
+public Moneda500(int serie){
+        super(serie);
     }
 @Override
     public int getValor(){
@@ -35,8 +38,8 @@ public Moneda500(){
     }
 }
 class Moneda100 extends Moneda{
-public Moneda100(){
-        super();
+public Moneda100(int serie){
+        super(serie);
     }
 @Override
     public int getValor(){
