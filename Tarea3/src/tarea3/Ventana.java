@@ -1,19 +1,19 @@
 package tarea3;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Image;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame{
 
     PanelPrincipal objeto = new PanelPrincipal();
+    private JButton boton;
+    private JButton boton2;
+    private JButton boton3;
 
     public Ventana() {
        
@@ -24,22 +24,60 @@ public class Ventana extends JFrame {
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         setVisible(true);
     }
-
+ 
     public void BotonExpendedor() {
 
-        JButton boton = new JButton("c");
-        boton.setBounds(517, 240, 40, 30);
-        JButton boton2 = new JButton("f");
-        boton2.setBounds(564, 240, 40, 30);
-        JButton boton3 = new JButton("s");
-        boton3.setBounds(611, 240, 40, 30);
+        boton = new JButton("1");
+        boton.setBounds(517, 240, 45, 35);
+        boton.setBackground(Color.red);
+        boton2 = new JButton("2");
+        boton2.setBounds(564, 240, 45, 35);
+        boton2.setBackground(Color.green);
+        boton3 = new JButton("3");
+        boton3.setBounds(611, 240, 45, 35);
+        boton3.setBackground(Color.orange);
         add(boton);
         add(boton2);
         add(boton3);
+        accionBoton0();
+        accionBoton1();
+        accionBoton2();
     }
+    public void accionBoton0(){
+        ActionListener OyendeDeAccion = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                objeto.ComprarBebida(1);
+                repaint();
+            }
+        };
+        boton.addActionListener(OyendeDeAccion);
+    }
+    public void accionBoton1(){
+        ActionListener OyendeDeAccion2 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objeto.ComprarBebida(2);
+                repaint();
+                
+            }
+        };
+        boton2.addActionListener(OyendeDeAccion2);
+    }
+    public void accionBoton2(){
+        ActionListener OyendeDeAccion3 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objeto.ComprarBebida(3);
+                repaint();
+                
+            }
+        };
+        boton3.addActionListener(OyendeDeAccion3);
+    }
+    
     public void BotonMoneda(){
         
         JButton moneda1 = new JButton("100");
@@ -62,6 +100,7 @@ public class Ventana extends JFrame {
         add(bebida1);
         add(bebida2);
         add(bebida3);
+        
     }
-
+    
 }
