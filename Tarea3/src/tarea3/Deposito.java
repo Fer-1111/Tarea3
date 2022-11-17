@@ -1,12 +1,11 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> bc3f0cc2c20fa47f39a1a16463e3b769bdd0ac87
 package tarea3;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JLabel;
+
+import java.awt.Graphics;
 
 public class Deposito extends JLabel{
     private final ArrayList<Bebida> ListBebidas;

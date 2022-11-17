@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> bc3f0cc2c20fa47f39a1a16463e3b769bdd0ac87
 package tarea3;
 
 public abstract class Moneda{

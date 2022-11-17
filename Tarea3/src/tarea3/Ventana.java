@@ -1,7 +1,9 @@
 package tarea3;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -15,6 +17,9 @@ public class Ventana extends JFrame{
     private JButton bebida1;
     private JButton bebida2;
     private JButton bebida3;
+     private JButton boton100;
+    private JButton boton500;
+    private JButton boton1000;
 
     public Ventana() {
        
@@ -78,16 +83,84 @@ public class Ventana extends JFrame{
     
     public void BotonMoneda(){
         
-        JButton moneda1 = new JButton("100");
-        moneda1.setBounds(40, 100, 60, 30);
-        JButton moneda2 = new JButton("500");
-        moneda2.setBounds(110, 100, 60, 30);
-        JButton moneda3 = new JButton("1000");
-        moneda3.setBounds(180, 100, 60, 30);
-        add(moneda1);
-        add(moneda2);
-        add(moneda3);
+        boton100 = new JButton("");//cien
+        boton100.setBounds(40, 100, 50, 50);
+        
+        //boton1.addActionListener(this);
+        ImageIcon imagen = new ImageIcon("C:\\Users\\ferno\\Desktop\\pruebaventana\\src\\images\\Moneda100.png");
+        ImageIcon icono = new ImageIcon(imagen.getImage().getScaledInstance(boton100.getWidth(), boton100.getHeight(), Image.SCALE_SMOOTH));
+       
+        boton100.setIcon(icono);
+        boton100.setBorder(null);
+        boton100.setBorderPainted(false);
+        boton100.setContentAreaFilled(false);
+        boton100.setOpaque(false);
+
+        add(boton100);
+        //--------
+        boton500 = new JButton("");//500
+        boton500.setBounds(120, 100, 50, 50);
+        
+        //boton1.addActionListener(this);
+        ImageIcon imagen2 = new ImageIcon("C:\\Users\\ferno\\Desktop\\pruebaventana\\src\\images\\Moneda500.png");
+        ImageIcon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(boton500.getWidth(), boton500.getHeight(), Image.SCALE_SMOOTH));
+       
+        boton500.setIcon(icono2);
+        boton500.setBorder(null);
+        boton500.setBorderPainted(false);
+        boton500.setContentAreaFilled(false);
+        boton500.setOpaque(false);
+
+        add(boton500);
+   //--------
+        boton1000 = new JButton("");//1000
+        boton1000.setBounds(200, 100, 50, 50);
+        
+        //boton1.addActionListener(this);
+        ImageIcon imagen3 = new ImageIcon("C:\\Users\\ferno\\Desktop\\pruebaventana\\src\\images\\Moneda1000.png");
+        ImageIcon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(boton1000.getWidth(), boton1000.getHeight(), Image.SCALE_SMOOTH));
+       
+        boton1000.setIcon(icono3);
+        boton1000.setBorder(null);
+        boton1000.setBorderPainted(false);
+        boton1000.setContentAreaFilled(false);
+        boton1000.setOpaque(false);
+
+        add(boton1000);
+        
+        accionBoton100();
+        accionBoton500();
+        accionBoton1000();
+   
     }
+    public void accionBoton100(){
+        ActionListener click100 = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("click");
+            }
+        };
+        boton100.addActionListener(click100);
+    }
+        public void accionBoton500(){
+        ActionListener click500 = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("click");
+            }
+        };
+        boton500.addActionListener(click500);
+    }
+        public void accionBoton1000(){
+        ActionListener click1000 = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("click");
+            }
+        };
+        boton1000.addActionListener(click1000);
+    }
+        
     public void RellenarBebida(){
         bebida1 = new JButton("x");
         bebida1.setBounds(308, 420, 40, 30);
