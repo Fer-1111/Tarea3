@@ -61,4 +61,28 @@ public class PanelPrincipal extends JPanel{
             }
         }
     }
+         public void BebidaCoca(){         
+             if(exp.coca.arrayLong()==0){
+                 for (int serie = 0; serie < 5; serie++) {
+                     
+                     exp.coca.addBebida(new CocaCola(100 + serie));
+                 }
+             } 
+    }
+         public void BebidaSprite(){         
+             if(exp.sprite.arrayLong()==0){
+                 for (int serie = 0; serie < 5; serie++) {
+                     
+                     exp.sprite.addBebida(new Sprite(100 + serie));
+                 }
+             } 
+    }
+         public void BebidaFanta(){         
+             if(exp.fanta.arrayLong()==0){
+                 for (int serie = 0; serie < 5; serie++) {
+                     
+                     exp.fanta.addBebida(new Fanta(100 + serie));
+                 }
+             } 
+    }
 }

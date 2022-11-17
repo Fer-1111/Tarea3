@@ -9,9 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class Expendedor extends JLabel{
-    private Deposito coca;
-    private Deposito sprite;
-    private Deposito fanta;
+    public Deposito coca;
+    public Deposito sprite;
+    public Deposito fanta;
     private int vuelto;
     private int precio;
 

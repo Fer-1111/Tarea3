@@ -10,7 +10,7 @@ class Comprador extends JLabel{
     private int cuantoVuelto;
     private int serie;
     public Comprador(){
-
+        
     }
     public int cuantoVuelto(){        
         return cuantoVuelto;
