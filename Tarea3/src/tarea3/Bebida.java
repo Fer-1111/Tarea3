@@ -47,10 +47,6 @@ class Sprite extends Bebida {
         sprite = new ImageIcon(getClass().getResource("/images/sprite.png"));
         g.drawImage(sprite.getImage(), 380, 45+i*(70), 30,50,this);
     }
-    public void paint2(Graphics g2){
-        sprite = new ImageIcon(getClass().getResource("/images/sprite.png"));
-        g2.drawImage(sprite.getImage(), 310, 500, 30,50,this);
-    }
 
 }
 class Fanta extends Bebida {
@@ -68,9 +64,7 @@ class Fanta extends Bebida {
         fanta = new ImageIcon(getClass().getResource("/images/fanta.png"));
         g.drawImage(fanta.getImage(), 450, 45+i*(70), 30,50,this);
     }
-    public void paint2(Graphics g2){
-        fanta = new ImageIcon(getClass().getResource("/images/fanta.png"));
-        g2.drawImage(fanta.getImage(), 310, 500, 30,50,this);
-    }
+
+
 }
 

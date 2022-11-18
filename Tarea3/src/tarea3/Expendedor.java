@@ -1,21 +1,26 @@
 package tarea3;
 
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-class Expendedor extends JLabel{
+class Expendedor extends JLabel implements MouseListener{
     public Deposito coca;
     public Deposito sprite;
     public Deposito fanta;
     private int vuelto;
     private final int precio;
+    private boolean saca;
 
     public Expendedor(){
         coca = new Deposito();
         sprite = new Deposito();
         fanta = new Deposito();
         precio = 900;
+        saca = false;
+        this.addMouseListener(this);
         for (int serie = 0; serie < 5; serie++) {
             coca.addBebida(new CocaCola(100 + serie));
             sprite.addBebida(new Sprite(200 + serie));
@@ -29,6 +34,10 @@ class Expendedor extends JLabel{
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
+        if(saca == true){
+            getBebida().paint(g, 6);
+            repaint();
+        }
     }
         public void comprarBebida(Moneda m, int cualBebida)throws PagoIncorrectoException , PagoInsuficienteException, NoHayBebidaException{
         
@@ -55,18 +64,20 @@ class Expendedor extends JLabel{
             for(int i = 0 ; i < cantMonedas100(); i++){
                 MonedasDelExp.addMoneda(getVuelto());
             }
-            if (cualBebida == 1) {
-                System.out.println("se saco una coca");             
+            if (cualBebida == 1) {           
                 coca.getBebida();
                 getBebida(1);
+                saca = true;
             }
             if (cualBebida == 2) {
                 sprite.getBebida();
                 getBebida(2);
+                saca = true;
             }
             if (cualBebida == 3) {
                 fanta.getBebida();
                 getBebida(3);
+                saca = true;
             }
         }
     }
@@ -110,5 +121,34 @@ class Expendedor extends JLabel{
     }
     public int vueltoCliente(){
         return vuelto;
+    }
+    public Bebida getBebida(){
+        Bebida b = new CocaCola(9);
+        return b;
+    }
+    @Override
+    public void mouseClicked(MouseEvent e){
+        getBebida();
+        System.out.println("se hizo click aki");
+        saca = false;
+    }
+    @Override
+    public void mousePressed(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

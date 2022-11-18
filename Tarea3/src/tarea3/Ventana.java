@@ -1,5 +1,6 @@
 package tarea3;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,7 @@ public class Ventana extends JFrame{
 
     PanelPrincipal objeto = new PanelPrincipal();
     Expendedor exp = new Expendedor();
+    
     private JButton boton;
     private JButton boton2;
     private JButton boton3;
@@ -34,7 +36,7 @@ public class Ventana extends JFrame{
 
         boton = new JButton("");
         boton.setBounds(517, 240, 45, 35);
-        ImageIcon imagen6 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\1.png");
+        ImageIcon imagen6 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\1.png");
         ImageIcon icono6 = new ImageIcon(imagen6.getImage().getScaledInstance(boton.getWidth(), boton.getHeight(), Image.SCALE_SMOOTH));
        
         boton.setIcon(icono6);
@@ -45,7 +47,7 @@ public class Ventana extends JFrame{
         
         boton2 = new JButton("");
         boton2.setBounds(564, 240, 45, 35);
-        ImageIcon imagen7 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\2.png");
+        ImageIcon imagen7 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\2.png");
         ImageIcon icono7 = new ImageIcon(imagen7.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH));
        
         boton2.setIcon(icono7);
@@ -57,7 +59,7 @@ public class Ventana extends JFrame{
         
         boton3 = new JButton("");
         boton3.setBounds(611, 240, 45, 35);
-        ImageIcon imagen8 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\3.png");
+        ImageIcon imagen8 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\3.png");
         ImageIcon icono8 = new ImageIcon(imagen8.getImage().getScaledInstance(boton3.getWidth(), boton3.getHeight(), Image.SCALE_SMOOTH));
        
         boton3.setIcon(icono8);
@@ -77,8 +79,8 @@ public class Ventana extends JFrame{
     public void accionBoton0(){
         ActionListener OyendeDeAccion = new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent e){
-                objeto.ComprarBebida(1);
+            public void actionPerformed(ActionEvent e){            
+                objeto.ComprarBebida(1);             
                 repaint();
             }
         };
@@ -113,7 +115,7 @@ public class Ventana extends JFrame{
         boton1.setBounds(40, 100, 50, 50);
         
         //boton1.addActionListener(this);
-        ImageIcon imagen = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\Moneda100.png");
+        ImageIcon imagen = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda100.png");
         ImageIcon icono = new ImageIcon(imagen.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH));
        
         boton1.setIcon(icono);
@@ -128,7 +130,7 @@ public class Ventana extends JFrame{
         boton2.setBounds(120, 100, 50, 50);
         
         //boton1.addActionListener(this);
-        ImageIcon imagen2 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\Moneda500.png");
+        ImageIcon imagen2 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda500.png");
         ImageIcon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH));
        
         boton2.setIcon(icono2);
@@ -143,7 +145,7 @@ public class Ventana extends JFrame{
         boton3.setBounds(200, 100, 50, 50);
         
         //boton1.addActionListener(this);
-        ImageIcon imagen3 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\Moneda1000.png");
+        ImageIcon imagen3 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda1000.png");
         ImageIcon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH));
        
         boton3.setIcon(icono3);
@@ -158,7 +160,7 @@ public class Ventana extends JFrame{
     public void RellenarBebida(){
         bebida1 = new JButton("");
         bebida1.setBounds(308, 420, 40, 30);
-        ImageIcon imagen3 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\LlenarCoca.jpg");
+        ImageIcon imagen3 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\LlenarCoca.jpg");
         ImageIcon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(bebida1.getWidth(), bebida1.getHeight(), Image.SCALE_SMOOTH));
        
         bebida1.setIcon(icono3);
@@ -169,7 +171,7 @@ public class Ventana extends JFrame{
         
         bebida2 = new JButton("");
         bebida2.setBounds(378, 420, 40, 30);
-        ImageIcon imagen4 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\LlenarSprite.jpeg");
+        ImageIcon imagen4 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\LLenarSprite.jpeg");
         ImageIcon icono4 = new ImageIcon(imagen4.getImage().getScaledInstance(bebida2.getWidth(), bebida2.getHeight(), Image.SCALE_SMOOTH));
        
         bebida2.setIcon(icono4);
@@ -180,7 +182,7 @@ public class Ventana extends JFrame{
         
         bebida3 = new JButton("");
         bebida3.setBounds(448, 420, 40, 30);
-        ImageIcon imagen5 = new ImageIcon("C:\\Users\\Sergio Opazo Z\\OneDrive\\Escritorio\\copy\\Tarea3\\src\\images\\LlenarFanta.png");
+        ImageIcon imagen5 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\LLenarFanta.png");
         ImageIcon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(bebida3.getWidth(), bebida3.getHeight(), Image.SCALE_SMOOTH));
        
         bebida3.setIcon(icono5);
@@ -227,5 +229,6 @@ public class Ventana extends JFrame{
         };
         bebida3.addActionListener(OyendeDeAccion);
     }
+    
    
 }
