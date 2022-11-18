@@ -1,6 +1,5 @@
 package tarea3;
 
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,14 +10,15 @@ import javax.swing.JFrame;
 public class Ventana extends JFrame{
 
     PanelPrincipal objeto = new PanelPrincipal();
-    Expendedor exp = new Expendedor();
-    
     private JButton boton;
     private JButton boton2;
     private JButton boton3;
     private JButton bebida1;
     private JButton bebida2;
     private JButton bebida3;
+    private JButton boton100;
+    private JButton boton500;
+    private JButton boton1000;
 
     public Ventana() {
        
@@ -36,7 +36,7 @@ public class Ventana extends JFrame{
 
         boton = new JButton("");
         boton.setBounds(517, 240, 45, 35);
-        ImageIcon imagen6 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\1.png");
+        ImageIcon imagen6 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\1.png");
         ImageIcon icono6 = new ImageIcon(imagen6.getImage().getScaledInstance(boton.getWidth(), boton.getHeight(), Image.SCALE_SMOOTH));
        
         boton.setIcon(icono6);
@@ -47,7 +47,7 @@ public class Ventana extends JFrame{
         
         boton2 = new JButton("");
         boton2.setBounds(564, 240, 45, 35);
-        ImageIcon imagen7 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\2.png");
+        ImageIcon imagen7 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\2.png");
         ImageIcon icono7 = new ImageIcon(imagen7.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH));
        
         boton2.setIcon(icono7);
@@ -59,7 +59,7 @@ public class Ventana extends JFrame{
         
         boton3 = new JButton("");
         boton3.setBounds(611, 240, 45, 35);
-        ImageIcon imagen8 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\3.png");
+        ImageIcon imagen8 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\3.png");
         ImageIcon icono8 = new ImageIcon(imagen8.getImage().getScaledInstance(boton3.getWidth(), boton3.getHeight(), Image.SCALE_SMOOTH));
        
         boton3.setIcon(icono8);
@@ -79,8 +79,8 @@ public class Ventana extends JFrame{
     public void accionBoton0(){
         ActionListener OyendeDeAccion = new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent e){            
-                objeto.ComprarBebida(1);             
+            public void actionPerformed(ActionEvent e){
+                objeto.ComprarBebida(1);
                 repaint();
             }
         };
@@ -108,59 +108,107 @@ public class Ventana extends JFrame{
         };
         boton3.addActionListener(OyendeDeAccion3);
     }
-    
+        public void accionMoneda(){
+        ActionListener OyendeDeMoneda = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objeto.CrearMoneda1000(new Moneda1000(1));
+                System.out.println("se creo la moneda de 1000");
+                repaint();
+                
+            }
+        };
+        boton1000.addActionListener(OyendeDeMoneda);
+    }
+            public void accionMoneda500(){
+        ActionListener OyendeDeMoneda500 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Moneda500 m = new Moneda500(1);
+                objeto.CrearMoneda500(m);
+                System.out.println("se creo la moneda de 500");
+                repaint();
+            }
+        };
+        boton500.addActionListener(OyendeDeMoneda500);
+    }
+                public void accionMoneda100(){
+        ActionListener OyendeDeMoneda100 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { 
+                objeto.CrearMoneda100(new Moneda100(1));
+                System.out.println("se creo la moneda de 100");
+                repaint();
+                
+            }
+        };
+        boton100.addActionListener(OyendeDeMoneda100);
+    }
         public void BotonMoneda(){
         
-        JButton boton1 = new JButton("");//cien
-        boton1.setBounds(40, 100, 50, 50);
+        boton100 = new JButton("");//cien
+        boton100.setBounds(40, 100, 50, 50);
         
         //boton1.addActionListener(this);
-        ImageIcon imagen = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda100.png");
-        ImageIcon icono = new ImageIcon(imagen.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH));
+        ImageIcon imagen = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda100.png");
+        ImageIcon icono = new ImageIcon(imagen.getImage().getScaledInstance(boton100.getWidth(), boton100.getHeight(), Image.SCALE_SMOOTH));
        
-        boton1.setIcon(icono);
-        boton1.setBorder(null);
-        boton1.setBorderPainted(false);
-        boton1.setContentAreaFilled(false);
-        boton1.setOpaque(false);
+        boton100.setIcon(icono);
+        boton100.setBorder(null);
+        boton100.setBorderPainted(false);
+        boton100.setContentAreaFilled(false);
+        boton100.setOpaque(false);
 
-        add(boton1);
+        add(boton100);
         //--------
-        JButton boton2 = new JButton("");//cien
-        boton2.setBounds(120, 100, 50, 50);
+        boton500 = new JButton("");//cien
+        boton500.setBounds(120, 100, 50, 50);
         
         //boton1.addActionListener(this);
-        ImageIcon imagen2 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda500.png");
-        ImageIcon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH));
+        ImageIcon imagen2 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda500.png");
+        ImageIcon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(boton500.getWidth(), boton500.getHeight(), Image.SCALE_SMOOTH));
        
-        boton2.setIcon(icono2);
-        boton2.setBorder(null);
-        boton2.setBorderPainted(false);
-        boton2.setContentAreaFilled(false);
-        boton2.setOpaque(false);
+        boton500.setIcon(icono2);
+        boton500.setBorder(null);
+        boton500.setBorderPainted(false);
+        boton500.setContentAreaFilled(false);
+        boton500.setOpaque(false);
 
-        add(boton2);
+        add(boton500);
    //--------
-        JButton boton3 = new JButton("");//cien
-        boton3.setBounds(200, 100, 50, 50);
+        boton1000 = new JButton("");//cien
+        boton1000.setBounds(200, 100, 50, 50);
         
         //boton1.addActionListener(this);
-        ImageIcon imagen3 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda1000.png");
-        ImageIcon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH));
+        ImageIcon imagen3 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\Moneda1000.png");
+        ImageIcon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(boton1000.getWidth(), boton1000.getHeight(), Image.SCALE_SMOOTH));
        
-        boton3.setIcon(icono3);
-        boton3.setBorder(null);
-        boton3.setBorderPainted(false);
-        boton3.setContentAreaFilled(false);
-        boton3.setOpaque(false);
-
-        add(boton3);
+        boton1000.setIcon(icono3);
+        boton1000.setBorder(null);
+        boton1000.setBorderPainted(false);
+        boton1000.setContentAreaFilled(false);
+        boton1000.setOpaque(false);
+        accionMoneda();
+        accionMoneda500();
+        accionMoneda100();
+        add(boton1000);
    
+    }
+    public void accion(){
+        ActionListener OyendeDeAccion3 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objeto.ComprarBebida(3);
+                repaint();
+                
+            }
+        };
+        boton3.addActionListener(OyendeDeAccion3);
     }
     public void RellenarBebida(){
         bebida1 = new JButton("");
         bebida1.setBounds(308, 420, 40, 30);
-        ImageIcon imagen3 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\LlenarCoca.jpg");
+        ImageIcon imagen3 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\LLenarCoca.png");
         ImageIcon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(bebida1.getWidth(), bebida1.getHeight(), Image.SCALE_SMOOTH));
        
         bebida1.setIcon(icono3);
@@ -171,7 +219,7 @@ public class Ventana extends JFrame{
         
         bebida2 = new JButton("");
         bebida2.setBounds(378, 420, 40, 30);
-        ImageIcon imagen4 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\LLenarSprite.jpeg");
+        ImageIcon imagen4 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\Sprite.png");
         ImageIcon icono4 = new ImageIcon(imagen4.getImage().getScaledInstance(bebida2.getWidth(), bebida2.getHeight(), Image.SCALE_SMOOTH));
        
         bebida2.setIcon(icono4);
@@ -182,7 +230,7 @@ public class Ventana extends JFrame{
         
         bebida3 = new JButton("");
         bebida3.setBounds(448, 420, 40, 30);
-        ImageIcon imagen5 = new ImageIcon("C:\\Users\\jorge\\Desktop\\Tarea3\\Tarea3\\src\\images\\LLenarFanta.png");
+        ImageIcon imagen5 = new ImageIcon("C:\\Users\\ferno\\Desktop\\Tarea3\\Tarea3\\src\\images\\LLenarFanta.png");
         ImageIcon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(bebida3.getWidth(), bebida3.getHeight(), Image.SCALE_SMOOTH));
        
         bebida3.setIcon(icono5);
@@ -229,6 +277,5 @@ public class Ventana extends JFrame{
         };
         bebida3.addActionListener(OyendeDeAccion);
     }
-    
    
 }

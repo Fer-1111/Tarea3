@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 public class PanelPrincipal extends JPanel{
     private final Expendedor exp;
     private final Comprador com;
+    private Moneda M1000;
+    private Moneda M500;
+    private Moneda M100;
     
     public PanelPrincipal(){
         exp = new Expendedor();
@@ -23,41 +26,85 @@ public class PanelPrincipal extends JPanel{
     public void ComprarBebida(int cualBebida){
         if(cualBebida == 1){
             try{
-                Moneda m = new Moneda1000(100);
-                exp.comprarBebida(m,1);
-                System.out.println("quedan: "+exp.BebidaQueQueda(1));
+                if(M1000 != null && M500 == null && M100 == null){
+                    exp.comprarBebida(CrearMoneda1000(M1000),1); 
+                }
+                else if(M1000 == null && M500 != null && M100 == null){
+                    exp.comprarBebida(CrearMoneda500(M500),1);
+                }
+                else if(M1000 == null && M500 == null && M100 != null){
+                    exp.comprarBebida(CrearMoneda100(M100),1);
+                }
             } 
             catch(PagoIncorrectoException ex){
                 System.out.println("error: "+ex.getMessage());
             }
-            catch(PagoInsuficienteException | NoHayBebidaException ex){
+            catch(PagoInsuficienteException ex){
                 System.out.println("error: "+ex.getMessage());
+            }
+            catch(NoHayBebidaException ex){
+                System.out.println("error: "+ex.getMessage());
+            }
+            finally{
+                M100 = null;
+                M500 = null;
+                M1000 = null;
+                System.out.println("error, estas intentando comprar sin dinero");
             }
         }
         if(cualBebida == 2){
             try{
-                Moneda m = new Moneda1000(100);
-                exp.comprarBebida(m,2);
-                System.out.println("quedan: "+exp.BebidaQueQueda(2));
+                if(M1000 != null && M500 == null && M100 == null){
+                    exp.comprarBebida(CrearMoneda1000(M1000),2); 
+                }
+                else if(M1000 == null && M500 != null && M100 == null){
+                    exp.comprarBebida(CrearMoneda500(M500),2);
+                }
+                else if(M1000 == null && M500 == null && M100 != null){
+                    exp.comprarBebida(CrearMoneda100(M100),2);
+                }
             } 
             catch(PagoIncorrectoException ex){
                 System.out.println("error: "+ex.getMessage());
             }
-            catch(PagoInsuficienteException | NoHayBebidaException ex){
+            catch(PagoInsuficienteException ex){
                 System.out.println("error: "+ex.getMessage());
+            }
+            catch(NoHayBebidaException ex){
+                System.out.println("error: "+ex.getMessage());
+            }
+            finally{
+                M100 = null;
+                M500 = null;
+                M1000 = null;
+                System.out.println("error, estas intentando comprar sin dinero");
             }
         }
         if(cualBebida == 3){
             try{
-                Moneda m = new Moneda1000(100);
-                exp.comprarBebida(m,3);
-                System.out.println("quedan: "+exp.BebidaQueQueda(3));
+                if(M1000 != null && M500 == null && M100 == null){
+                    exp.comprarBebida(CrearMoneda1000(M1000),3); 
+                }
+                else if(M1000 == null && M500 != null && M100 == null){
+                    exp.comprarBebida(CrearMoneda500(M500),3);
+                }
+                else if(M1000 == null && M500 == null && M100 != null){
+                    exp.comprarBebida(CrearMoneda100(M100),3);
+                }
             } 
             catch(PagoIncorrectoException ex){
                 System.out.println("error: "+ex.getMessage());
             }
-            catch(PagoInsuficienteException | NoHayBebidaException ex){
+            catch(PagoInsuficienteException ex){
                 System.out.println("error: "+ex.getMessage());
+            }
+            catch(NoHayBebidaException ex){
+                System.out.println("error: "+ex.getMessage());
+            }
+            finally{
+                M100 = null;
+                M500 = null;
+                M1000 = null;
             }
         }
     }
@@ -85,4 +132,23 @@ public class PanelPrincipal extends JPanel{
                  }
              } 
     }
+    public Moneda CrearMoneda1000(Moneda M){
+        if(M != null){
+            return M1000 = new Moneda1000(1);
+        }
+        return null;
+    }
+    public Moneda CrearMoneda500(Moneda M){
+        if(M != null){
+            return M500 = new Moneda500(1);
+        }
+        return null;
+    }
+    public Moneda CrearMoneda100(Moneda M){
+        if(M != null){
+            return M100 = new Moneda100(1);
+        }
+        return null;
+    }
+         
 }
