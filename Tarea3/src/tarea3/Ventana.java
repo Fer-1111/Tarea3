@@ -11,6 +11,7 @@ public final class Ventana extends JFrame{
 
     PanelPrincipal objeto = new PanelPrincipal();
     
+    private JButton sacarBebida;
     private JButton boton;
     private JButton boton2;
     private JButton boton3;
@@ -26,13 +27,27 @@ public final class Ventana extends JFrame{
         BotonMoneda();
         BotonesExpendedor();
         RellenarBebida();
+        TomarBebida();
         add(objeto);
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
- 
+    public void TomarBebida(){
+        sacarBebida = new JButton("tomar bebida");
+        sacarBebida.setBounds(770, 430, 120, 35);
+        sacarBebida.setOpaque(false);
+        add(sacarBebida);
+        botonTomarBebida();
+    }
+    public void botonTomarBebida(){
+        ActionListener OyendeDeAccion = (ActionEvent e) -> {
+            objeto.TomarBebida();
+            repaint();
+        };
+        sacarBebida.addActionListener(OyendeDeAccion);
+    }
     public void BotonesExpendedor() {
 
         boton = new JButton("");

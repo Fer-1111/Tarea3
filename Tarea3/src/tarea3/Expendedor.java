@@ -10,7 +10,7 @@ class Expendedor extends JPanel{
     public Deposito fanta;
     private int vuelto;
     private final int precio;
-    private int saca;
+    public int saca;
     private int serieMoneda;
     private int serieBebida;
     private int bebidaComprada;

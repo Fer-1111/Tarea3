@@ -1,7 +1,6 @@
 package tarea3;
 
 import java.awt.Graphics;
-import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -16,6 +15,7 @@ public class PanelPrincipal extends JPanel{
         exp = new Expendedor();
         com = new Comprador();
     }
+    @Override
     public void paint(Graphics g){
         super.paint(g);
         ImageIcon Fondo = new ImageIcon(getClass().getResource("/images/fondo.jpg"));
@@ -89,29 +89,26 @@ public class PanelPrincipal extends JPanel{
             }
         }
     }
-         public void BebidaCoca(){         
-             if(exp.coca.arrayLong()==0){
-                 for (int serie = 0; serie < 5; serie++) {
-                     
-                     exp.coca.addBebida(new CocaCola(100 + serie));
-                 }
-             } 
+    public void BebidaCoca(){         
+        if(exp.coca.arrayLong()==0){
+            for (int serie = 0; serie < 5; serie++) {     
+                exp.coca.addBebida(new CocaCola(100 + serie));
+            }
+        } 
     }
-         public void BebidaSprite(){         
-             if(exp.sprite.arrayLong()==0){
-                 for (int serie = 0; serie < 5; serie++) {
-                     
-                     exp.sprite.addBebida(new Sprite(100 + serie));
-                 }
-             } 
+    public void BebidaSprite(){         
+        if(exp.sprite.arrayLong()==0){
+            for (int serie = 0; serie < 5; serie++) {         
+                exp.sprite.addBebida(new Sprite(100 + serie));
+            }
+        } 
     }
-         public void BebidaFanta(){         
-             if(exp.fanta.arrayLong()==0){
-                 for (int serie = 0; serie < 5; serie++) {
-                     
-                     exp.fanta.addBebida(new Fanta(100 + serie));
-                 }
-             } 
+    public void BebidaFanta(){         
+        if(exp.fanta.arrayLong()==0){
+            for (int serie = 0; serie < 5; serie++) {     
+                exp.fanta.addBebida(new Fanta(100 + serie));
+            }
+        } 
     }
     public Moneda CrearMoneda1000(Moneda M){
         if(M != null){
@@ -130,5 +127,8 @@ public class PanelPrincipal extends JPanel{
             return M100 = new Moneda100(1);
         }
         return null;
-    }     
+    }    
+    public void TomarBebida(){
+        exp.saca = 0;
+    }
 }
