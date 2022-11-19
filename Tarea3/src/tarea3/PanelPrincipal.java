@@ -1,6 +1,7 @@
 package tarea3;
 
 import java.awt.Graphics;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -36,20 +37,13 @@ public class PanelPrincipal extends JPanel{
                     exp.comprarBebida(CrearMoneda100(M100),1);
                 }
             } 
-            catch(PagoIncorrectoException ex){
-                System.out.println("error: "+ex.getMessage());
-            }
-            catch(PagoInsuficienteException ex){
-                System.out.println("error: "+ex.getMessage());
-            }
-            catch(NoHayBebidaException ex){
+            catch(PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex){
                 System.out.println("error: "+ex.getMessage());
             }
             finally{
                 M100 = null;
                 M500 = null;
                 M1000 = null;
-                System.out.println("error, estas intentando comprar sin dinero");
             }
         }
         if(cualBebida == 2){
@@ -64,20 +58,13 @@ public class PanelPrincipal extends JPanel{
                     exp.comprarBebida(CrearMoneda100(M100),2);
                 }
             } 
-            catch(PagoIncorrectoException ex){
-                System.out.println("error: "+ex.getMessage());
-            }
-            catch(PagoInsuficienteException ex){
-                System.out.println("error: "+ex.getMessage());
-            }
-            catch(NoHayBebidaException ex){
+            catch(PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex){
                 System.out.println("error: "+ex.getMessage());
             }
             finally{
                 M100 = null;
                 M500 = null;
                 M1000 = null;
-                System.out.println("error, estas intentando comprar sin dinero");
             }
         }
         if(cualBebida == 3){
@@ -92,13 +79,7 @@ public class PanelPrincipal extends JPanel{
                     exp.comprarBebida(CrearMoneda100(M100),3);
                 }
             } 
-            catch(PagoIncorrectoException ex){
-                System.out.println("error: "+ex.getMessage());
-            }
-            catch(PagoInsuficienteException ex){
-                System.out.println("error: "+ex.getMessage());
-            }
-            catch(NoHayBebidaException ex){
+            catch(PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex){
                 System.out.println("error: "+ex.getMessage());
             }
             finally{
@@ -149,6 +130,5 @@ public class PanelPrincipal extends JPanel{
             return M100 = new Moneda100(1);
         }
         return null;
-    }
-         
+    }     
 }

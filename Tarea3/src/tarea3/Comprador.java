@@ -21,6 +21,7 @@ class Comprador extends JLabel{
     public int SerieBebida(){
         return serie;
     }
+    @Override
     public void paint(Graphics g){
         ImageIcon ManoI = new ImageIcon(getClass().getResource("/images/ManoIzquierda.png"));
         g.drawImage(ManoI.getImage(), 20, 330, 250,250,this); 
